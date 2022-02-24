@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Inicio de head -->
+<%- include('../partials/head') %>
+
+  <body>
+    <!-- Inicio de header -->
+    <%- include('../partials/header') %>
+
+      <!-- Inicio de main -->
+      <main>
+        <div class="box">
+          <div class="box-login">
+            <h2>Crear producto</h2>
+
+            <%- include('../partials/errors') %>
+
+              <form action="/products" method="POST" enctype="multipart/form-data" id="formProduct">
+                <div class="email-box">
+                  <label class="l-email" for="productName">Nombre</label>
+                  <input class="text-input" type="text" name="productName" id="productName"
+                    placeholder="Escribe el nombre del producto" />
+                </div>
+                <div class="email-box">
+                  <label class="l-email" for="productDescription">Descripción</label>
+                  <textarea class="text-input" name="productDescription" id="productDescription" cols="30" rows="5"
+                    placeholder="Escribe la descripción del producto"></textarea>
+                </div>
+                <div class="email-box">
+                  <label class="l-email" for="imgProduct">Subir imagenes</label>
+                  <input class="text-input" type="file" name="imgProduct" id="imgProduct" />
+                </div>
+
+                <%- include('../partials/category') %>
+
+                  <div class="email-box">
+                    <label class="l-email" for="price">Precio</label>
+                    <input class="text-input" type="text" name="price" id="price"
+                      placeholder="Escribe aquí el precio" />
+                  </div>
+
+                  <div class="email-box">
+                    <label class="l-email" for="stock">Disponibilidad</label>
+                    <input class="text-input" type="text" name="stock" id="stock"
+                      placeholder="Escriba aquí la disponibilidad" value="0"/>
+                  </div>
+
+                  <div class="email-box">
+                    <label class="l-email" for="productFeatures">Caracteristicas</label>
+                    <textarea class="text-input" name="productFeatures" id="productFeatures" rows="5"></textarea>
+                  </div>
+
+                  <div class="email-box">
+                    <label class="l-email" for="popular">Producto destacado<input type="checkbox" name="popular"
+                        id="popular" /></label>
+                  </div>
+
+                  <input class="button-submit" type="submit" value="Guardar producto" />
+              </form>
+          </div>
+        </div>
+      </main>
+
+      <!-- Inicio del footer -->
+      <%- include('../partials/footer.ejs') %>
+  </body>
+  <script src="/js/productValidation.js"></script>
+
+</html>

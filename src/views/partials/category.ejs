@@ -1,0 +1,11 @@
+<div class="email-box">
+  <label id="categorias">Categorías</label>
+  <% let checked %> <% if (locals && locals.category) { checked = category; } %>
+  <% categorias.forEach(categoria => { %>
+  <label class="l-email"
+    ><input type="radio" class="category" name="category" id="<%=
+    categoria.titulo %>" value="<%= categoria.id %>" <%= checked ===
+    categoria.id ? 'checked' : '' %> > <%= categoria.titulo %></label
+  >
+  <% }); %>
+</div>

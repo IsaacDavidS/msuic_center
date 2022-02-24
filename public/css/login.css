@@ -1,0 +1,134 @@
+.box {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.box-login {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    width: fit-content;  
+    border-radius: 55px;
+    background: #fff;
+    
+}
+.box-login h2 {
+    text-align: center;
+}
+
+.logo-container {
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    margin-top: 4vh;
+    margin-bottom: 10px;
+}
+
+h2 {
+    align-self: flex-start;
+    padding: 10px;
+    width: 90%;
+    margin: auto;
+}
+.alert{
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.alert li{
+    margin: 10px 0 0 0 ;
+    font-size: 14px;
+    
+    
+}
+.alert p{
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+form {
+    text-align: center;
+}
+
+.email-box, .password-box {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 30px 10px;
+    margin: auto;
+}
+
+.l-email {
+    width: 100%;
+    text-align: left;
+}
+
+.l-password {
+    width: 50%;
+    text-align: left;
+}
+
+div.password-box a {
+    width: 50%;
+    text-align: right;
+}
+
+.text-input {
+    width: 100%;   
+    padding: 5px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: inset 4px 4px 8px #e0e0e0,
+                inset -4px -4px 8px #ffffff;
+}
+
+div.keep-login {
+    width: 90%;
+    margin: auto;
+    text-align: left;
+}
+
+div.keep-login label {
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.button-submit {
+    cursor: pointer;
+    width: 50%;
+    padding: 10px;
+    border: none;
+    margin: 10px;
+    border-radius: 8px;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    box-shadow:  4px 4px 8px #bababa,
+                -4px -4px 8px #ffffff;
+    transition: all 450ms;
+}
+
+.button-submit:hover {
+    background: linear-gradient(145deg, #ffe400, #e6c000);
+    color: #fff;
+}
+
+.new-user {
+    text-align: left;
+    position: absolute;
+    bottom: -50px;
+    left: 0px;
+}

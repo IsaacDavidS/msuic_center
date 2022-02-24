@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Inicio del head -->
+<%- include('../partials/head') %>
+
+  <body>
+    <!-- Inicio de header -->
+    <%- include('../partials/header') %>
+
+      <!-- Inicio de main -->
+      <main>
+        <h1>Product Cart</h1>
+        <% if(locals && locals.productos){ %>
+          <%- include('../partials/cartItem',{productos}) %>
+            <% } %>
+              <article class="box-cart box-cart__container">
+              </article>
+              <article class="flex__boton--continuar">
+                <button id="eliminarProductos" class="btn">Eliminar todo</button>
+              </article>
+              <article class="box-resumen">
+                <h3>Resumen de Compra</h3>
+                <div id="resumenCart">
+                </div>
+                <hr />
+                <div class="flex__resumen--total">
+                  <p>Total Compra: $ </p>
+                  <p id="resumenTotal">0</p>
+                </div>
+              </article>
+              <div class="flex__boton--continuar">
+                <button class="btn continuar">Continuar comprando</button>
+              </div>
+
+              <article class="box-pd">
+                <%- include('../partials/similarItems.ejs') %>
+              </article>
+      </main>
+
+      <!-- Inicio del footer -->
+      <%- include('../partials/footer') %>
+
+        <script src="/js/cart.js"></script>
+  </body>
+
+</html>

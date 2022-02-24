@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Inicio del head -->
+  <%- include('../partials/head') %>
+
+  <body>
+    <!-- Inicio de header -->
+    <%- include('../partials/header') %>
+
+    <!-- Inicio del div principal -->
+    <div class="box">
+      <!-- <a class="logo-container" href="/"><img class="logo" src="/images/corsair-logo.svg"
+                        alt="Corsair logo"></a> -->
+      <div class="box-register">
+        <h2>Crear nueva cuenta</h2>
+        <%- include('../partials/errors') %>
+
+        <form
+          action="/users/register"
+          method="POST"
+          enctype="multipart/form-data"
+          id="formRegister"
+        >
+          <div class="full-name">
+            <div class="name">
+              <label class="l-name" for="user-name">Nombre</label>
+              <input
+                class="text-input"
+                type="text"
+                name="firstName"
+                id="user-name"
+                placeholder="Escriba su nombre"
+              />
+            </div>
+
+            <div class="last-name">
+              <label class="l-name" for="user-last-name">Apellido</label>
+              <input
+                class="text-input"
+                type="text"
+                name="lastName"
+                id="user-last-name"
+                placeholder="Escriba su apellido"
+              />
+            </div>
+          </div>
+          <div class="email-box">
+            <label for="avatar">Suba su imagen de perfil</label>
+            <input type="file" name="avatar" id="avatar" />
+          </div>
+          <div class="email-box">
+            <label class="l-email" for="user-email">Email</label>
+            <input
+              class="text-input"
+              type="text"
+              name="email"
+              id="user-email"
+              placeholder="Escriba su email"
+            />
+          </div>
+          <div class="password-box">
+            <label class="l-password" for="user-password">Contraseña</label>
+            <input
+              class="text-input"
+              type="password"
+              name="password"
+              id="user-password"
+              placeholder="Ingrese su contraseña"
+            />
+          </div>
+
+          <div class="confirm-password-box">
+            <label class="l-password" for="confirm-user-password"
+              >Confirmar contraseña</label
+            >
+            <input
+              class="text-input"
+              type="password"
+              name="confirmPassword"
+              id="confirm-user-password"
+              placeholder="Confirme su contraseña"
+            />
+          </div>
+
+          <input class="button-submit" type="submit" value="Crear cuenta" />
+        </form>
+
+        
+      </div>
+    </div>
+
+    <!-- Inicio del footer -->
+    <%- include('../partials/footer.ejs') %>
+  </body>
+
+  <script src="/js/registerValidation.js"></script>
+</html>

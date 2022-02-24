@@ -1,0 +1,38 @@
+<header class="background">
+  <section class="flex__header--768px header_main">
+    <div>
+      <a href="/"><img class="logo" src="/images/logo-music.svg" alt="logo" /></a>
+    </div>
+    <div class="flex__header">
+      <form method="GET" action="/products/search" class="search__header">
+        <input class="form-control" type="search" name="product" id="" />
+        <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
+      </form>
+      <div class="header__loginCart">
+        <% if(locals && locals.user){ %>
+          <a href="/users/edit/<%= user.id %> ">
+            <img class="img__perfil--header" src="/images/users/<%= user.userImage %>" alt="<%= user.userImage %>">
+          </a>
+          <a href="/users/logout"> <button class="btn header__logout">Logout</button></a>
+          <% }else{ %>
+            <a href="/users/login">
+              <button class="btn ocultar__btn">Sign In</button><i class="fas fa-user"></i>
+            </a>
+            <a href="/users/register">
+              <button class="btn ocultar__btn">Sign Up</button><i class="fas fa-address-book"></i>
+            </a>
+            <% } %>
+            <a href="/products/cart" class="position-relative"><i class="fas fa-dolly dots"></i><span id="notification" class="position-absolute top-0 start-100 translate-middle badge rounded-circle bg-danger text-light"></span></a>
+    </div>
+  </section>
+
+  <!-- Barra de Navegación -->
+  <section>
+    <nav>
+      <ul>
+        <li><a href="/products?page=1">COMPRAR</a></li>
+        
+      </ul>
+    </nav>
+  </section>
+</header>
