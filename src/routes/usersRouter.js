@@ -10,7 +10,7 @@ const logoutMid = require("../middlewares/logoutMid");
 const validarLogin = require("../middlewares/validarLogin");
 const validarRegistro = require("../middlewares/validarRegistro");
 const validarUpdate = require("../middlewares/validarUpdate");
-// Multer settings
+// Multer
 const uploadFile = require("../middlewares/multerUsers");
 
 router.get("/login", guestOnlyMid, usersController.login);
@@ -22,7 +22,7 @@ router.get("/edit/:id", checkLoginMid, usersController.edit);
 router.put("/edit/:id", checkLoginMid, uploadFile.single('avatar'), validarUpdate, usersController.update);
 router.get("/logout", logoutMid, usersController.logout);
 
-//comprobar login iniciado
+//Comprobación login
 router.get("/logged", usersController.logged);
 
 router.get("/*", (req, res) => res.render("notFound"));

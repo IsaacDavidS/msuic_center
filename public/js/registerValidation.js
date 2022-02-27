@@ -77,7 +77,4 @@ window.onload = function () {
   });
 };
 
-/* Sobre la comprobacion de si el email ya existe, crear una api en back, consumirla en front y que ahi
-verifique si esta o no ese email. */
 
-/* Agregar que se pueda editar la imagen dentro del edit de usuarios. */

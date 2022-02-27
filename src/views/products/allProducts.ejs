@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Inicio de head -->
+<!-- Head -->
 <%- include('../partials/head.ejs') %>
 
     <body>
-        <!-- Inicio de header -->
+        <!-- Header -->
         <%- include('../partials/header') %>
 
-            <!-- Productos a mostrar -->
+            
             <section class="productosDestacados__main">
                 <h2>¡Elige y prende la fiesta!</h2>
                 <% if(locals && locals.user && user.isAdmin) {%>
@@ -21,7 +21,7 @@
 
                                 <% });%>
             </section>
-            <!-- Paginacion -->
+            
             <div class="btn__pagination">
 
                 <%if(page> 1){ %>
@@ -34,7 +34,7 @@
                             <% } %>
 
             </div>
-            <!-- Inicio del footer -->
+            <!-- Footer -->
             <%- include('../partials/footer.ejs') %>
 
     </body>

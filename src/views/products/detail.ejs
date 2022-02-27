@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- Inicio del head -->
+  <!-- Head -->
   <%- include('../partials/head') %>
 
   <body>
-    <!-- Inicio de header -->
+    <!-- Header -->
     <%- include('../partials/header') %>
 
-    <!-- Inicio del detalle de producto -->
+    <!-- Detalle -->
     <main>
       <div class="box-pd">
         <%- include('../partials/similarItems.ejs', {category:
@@ -23,7 +23,7 @@
             <h4>$<%= product.precio%></h4>
             <div class="flex__btn--detail">
               <button class="add-item btn btn__agregar" name="anadirAlCarro">
-                Agregar<i class="fas fa-dolly"></i>
+                Añadir<i class="fas fa-dolly"></i>
               </button>
               <% if(locals && locals.user && user.isAdmin) {%>
               <a href="/products/edit/<%= product.id  %> ">
@@ -44,7 +44,7 @@
       </div>
     </main>
 
-    <!-- Inicio del footer -->
+    <!-- Footer -->
     <%- include('../partials/footer') %>
 
     <script

@@ -22,13 +22,7 @@ const validarRegistro = [
     return true;
   }),
   check("email").isEmail().withMessage("El email no es valido") /*.bail()
-         .custom((value) => {
-            let user = users.find(value);
-            if (user != undefined) {
-                throw new Error("El email ya esta registrado")
-            }
-            return true;
-        }), */,
+          */,
   check("password")
     .isLength({ min: 6 })
     .withMessage("El password debe tener al menos 6 caracteres"),
@@ -42,4 +36,4 @@ const validarRegistro = [
 
 module.exports = validarRegistro;
 
-//Preguntar a Nacho sobre: como evitar que si el archivo no es una imagen, no se guarde en la base de datos.
+

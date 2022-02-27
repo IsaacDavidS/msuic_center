@@ -6,8 +6,7 @@ const { Op } = require("sequelize");
 
 const { validationResult } = require("express-validator");
 
-// const usersFilePath = path.join(__dirname, "../data/users.json");
-// let users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
+
 
 const usersController = {
   login: (req, res) => {
@@ -54,29 +53,10 @@ const usersController = {
           }
         })
         .catch((error) => {
-          res.render("notFound", { error: "Ocurrio un error al iniciar sesión, intente de nuevo más tarde" });
+          res.render("notFound", { error: "Ocurrió un error al iniciar sesión, intente de nuevo más tarde" });
         });
 
-      // const user = users.find(user => user.email === email);
-      // if (!user) {
-      //   validations.errors.push({ msg: 'El usuario no existe' });
-      //   return res.render("./users/login", {
-      //     errors: validations.errors, user: req.loggedUser
-      //   });
-      // } else {
-      //   if (!bcrypt.compareSync(password, user.password)) {
-      //     validations.errors.push({ msg: 'La contraseña es incorrecta' });
-      //     return res.render("./users/login", {
-      //       errors: validations.errors, user: req.loggedUser
-      //     });
-      //   } else {
-      //     req.session.user = user.email;
-      //     if (req.body.rememberMe !== undefined) {
-      //       res.cookie('user', user.email, { maxAge: 1000 * 60 * 60 * 24 * 7 });
-      //     }
-      //     res.redirect("/");
-      //   }
-      // }
+      
     } else {
       res.render("./users/login", {
         errors: validations.errors,
@@ -85,7 +65,7 @@ const usersController = {
     }
   },
 
-  /* Volver a ver los .catch */
+  
   newUser: (req, res) => {
     let validations = validationResult(req);
     if (validations.isEmpty()) {
@@ -121,20 +101,10 @@ const usersController = {
           res.redirect("/users/login");
         })
         .catch((error) => {
-          res.render("notFound", { error: "Ocurrio un error al registrar el usuario, intente de nuevo más tarde" });
+          res.render("notFound", { error: "Ocurrió un error al registrar el usuario, intente de nuevo más tarde" });
         });
 
-      // const newUser = {
-      //   id: users.length + 1,
-      //   name: req.body.firstName,
-      //   lastName: req.body.lastName,
-      //   email: req.body.email,
-      //   password: passEncriptada,
-      //   userImage: userImage,
-      // };
-      // users.push(newUser);
-      // fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '));
-      // res.redirect('/users/login');
+      
     } else {
       if(req.file){
         fs.unlink(path.join(__dirname, "../../public/images/users/", req.file.filename),
@@ -153,9 +123,7 @@ const usersController = {
   },
   delete: (req, res) => {
     let deleteId = req.params.id;
-    // users = users.filter(user => user.id != deleteId);
-    // fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '));
-    // res.redirect('/');
+    
     db.Usuario
       .findByPk(deleteId)
       .then((user) => {
@@ -183,7 +151,7 @@ const usersController = {
         res.redirect("/");
       })
       .catch((error) => {
-        res.render("notFound", { error: "Ocurrio un error al eliminar el usuario, intente de nuevo más tarde" });
+        res.render("notFound", { error: "Ocurrió un error al eliminar el usuario, intente de nuevo más tarde" });
       });
   },
   edit: (req, res) => {
@@ -191,26 +159,18 @@ const usersController = {
     if(req.loggedUser.id != editId){
       res.redirect(`/users/edit/${req.loggedUser.id}`);
     }
-    // let user = users.find(user => user.id == editId);
-    // res.render("./users/user", { user });
+    
     db.Usuario.findByPk(editId)
       .then((user) => {
         res.render("./users/user", { user: user });
       })
       .catch((error) => {
-        res.render("notFound", { error: "Ocurrio un error al acceder a la información, intente de nuevo más tarde" });
+        res.render("notFound", { error: "Ocurrió un error al acceder a la información, intente de nuevo más tarde" });
       });
   },
   update: (req, res) => {
     let updateId = req.params.id;
-    // let index = users.findIndex(user => user.id === parseInt(updateId));
-    // users[index].name = req.body.firstName;
-    // users[index].lastName = req.body.lastName;
-    // if (req.body.password != '') {
-    //   users[index].password = req.body.password;
-    // }
-    // fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '));
-    // res.redirect('/users/edit/' + updateId);
+    
     let validations = validationResult(req);
     if (validations.isEmpty()) {
       db.Usuario
@@ -252,7 +212,7 @@ const usersController = {
               res.redirect("/users/edit/" + updateId);
             })
             .catch((error) => {
-              res.render("notFound", { error: "Ocurrio un error al actualizar el usuario, intente de nuevo más tarde" });
+              res.render("notFound", { error: "Ocurrió un error al actualizar el usuario, intente de nuevo más tarde" });
             });
         });
     } else {
