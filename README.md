@@ -16,7 +16,7 @@ https://deejaystore.com.ar/
 Descripcion: Estos links fueron elegidos porque le permiten al usuario acceder facilmente a los productos y categorias. Las paginas son muy atractivas a la vista y obtienen un llamado a la acción de forma intuitiva. 
 
 El link del repositorio del equipo 6:
-https://github.com/Pope17/grupo_-6_MusicCenter.git
+https://github.com/IsaacDavidS/music_center
 
 Link de trabajo de Trello:
 https://trello.com/b/7KRXEEfG/musiccenter
